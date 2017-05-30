@@ -1,7 +1,7 @@
 
 $(document).ready(function() {
 
-  var api = "http://localhost:3001/api/wwtp?q="
+  var api = "/api/wwtp?q="
   var all = "all"
 
   function CombineUrl(api,mod){
@@ -199,7 +199,7 @@ NewGeoJson.source.data.features.forEach(function(marker) {
      map.getCanvas().style.cursor = '';
 
     })
-    
+
   new mapboxgl.Marker(mark, {offset: [-20, -15]})
         .setLngLat(marker.geometry.coordinates)
         .setPopup(pop)

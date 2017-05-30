@@ -4,7 +4,7 @@ var BootstrapTable = ReactBsTable.BootstrapTable;
 var TableHeaderColumn = ReactBsTable.TableHeaderColumn;
 import '../public/css/react-bootstrap-table.css';
 import ReactModal from 'react-modal';
-import axios from 'axios'
+import Client from './Client'
 
 
 class App extends React.Component {
@@ -25,13 +25,12 @@ class App extends React.Component {
 
 
    componentDidMount() {
-     var url='http://localhost:3001/api/wwtp?q=' + this.state.city
-     console.log(url)
-     axios.get(url)
-    .then(res => {
-      const posts=res.data.wwtpdata.wwtp
-      this.setState({ posts })
-    })
+
+     Client.search("all", (data) => {
+       this.setState({
+         posts: data.wwtpdata.wwtp
+       });
+     });
   }
 
   handleOpenModal () {

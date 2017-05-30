@@ -1,8 +1,10 @@
 /* eslint-disable no-undef */
-function search() {
-  return fetch('api/wwtp')
-  .then(checkStatus)
+function search(query, cb) {
+  return fetch(`api/wwtp?q=${query}`, {
+    accept: 'application/json',
+  }).then(checkStatus)
     .then(parseJSON)
+    .then(cb);
 }
 
 function checkStatus(response) {
