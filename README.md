@@ -22,7 +22,7 @@ Hydro data maps all of the wastewater treatment plans in California. The purpose
 This website features a map that can be searched for location of treatment plant by city. It will zoom into that location and display an icon marker. You can click on the icon marker to display information of that treatment plant including name, address, total water treated in a year,and total water recycled within and out of district. 
 
 
-![Demo](http://imgur.com/hZX6tcs)
+![Demo](http://imgur.com/hZX6tcs.gif)
 
 
 
@@ -60,9 +60,9 @@ The database used in this is SQlite that stores plant information. The front end
 
 ## <a name="about"></a>About the Author
 This web app was made be Joe Kurokawa, an engineer and a developer. 
-[jkurokawa.com](http://jkurokawa.com)
-[linkedin.com/jkurokawa](http://linkedin.com/jkurokawa)
-[github.com/joeysk2012](http://github.com/joeysk2012)
+-[jkurokawa.com](http://jkurokawa.com)
+-[linkedin.com/jkurokawa](https://www.linkedin.com/in/joekurokawa/)
+-[github.com/joeysk2012](http://github.com/joeysk2012)
 
 
 
