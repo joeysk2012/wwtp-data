@@ -1,10 +1,10 @@
-#Wastewater Treatment Data Map
+# Wastewater Treatment Data Map
 
 Hydro data maps all of the wastewater treatment plans in California. The purpose of this project is to make the public aware of where your water goes once it goes down the drain and how their water distcrit is doing compared to others in terms of recycling back into the system. There will be over 900 sites when all the data is collected. The datasource of this project is the State of California department of Water Resources 2015 Urban Water Management Plan. 
 
 [Depatrment of Water Resources](http://www.water.ca.gov/urbanwatermanagement/uwmp2015.cfm)
 
-#Content
+# Content
 
 - [Features](#features)
 - [Search Function](#searchfunction)
@@ -14,7 +14,7 @@ Hydro data maps all of the wastewater treatment plans in California. The purpose
 - [Database](#database)
 - [Technologies Used](#technologiesused)
 - [Future to Do List](#todo) 
-- [About the Author] (#about)
+- [About the Author](#about)
 
 
 
@@ -22,7 +22,7 @@ Hydro data maps all of the wastewater treatment plans in California. The purpose
 This website features a map that can be searched for location of treatment plant by city. It will zoom into that location and display an icon marker. You can click on the icon marker to display information of that treatment plant including name, address, total water treated in a year,and total water recycled within and out of district. 
 
 
-![](http://imgur.com/a/9w4P0)
+![Demo](http://imgur.com/hZX6tcs)
 
 
 
@@ -56,13 +56,13 @@ The database used in this is SQlite that stores plant information. The front end
 
 ## <a name="todo"></a>Future To Do List
 
--[] Integration boundry data from each waterdistrict to map out he boundries of each district
+[] Integration boundry data from each waterdistrict to map out he boundries of each district
 
 ## <a name="about"></a>About the Author
 This web app was made be Joe Kurokawa, an engineer and a developer. 
-[jkurokawa.com](jkurokawa.com)
-[linkedin.com/jkurokawa](linkedin.com/jkurokawa)
-[github.com/joeysk2012](github.com/joeysk2012)
+[jkurokawa.com](http://jkurokawa.com)
+[linkedin.com/jkurokawa](http://linkedin.com/jkurokawa)
+[github.com/joeysk2012](http://github.com/joeysk2012)
 
 
 
