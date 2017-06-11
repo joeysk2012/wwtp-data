@@ -7,6 +7,16 @@ function search(query, cb) {
     .then(cb);
 }
 
+function correct(query, cb) {
+  var url='http://api.openweathermap.org/data/2.5/weather?q='+query+',usa&appid=4e44e3428b01d9a6ad76981f8ab8db5a'
+
+  return fetch(url, {
+    accept: 'application/json',
+  }).then(checkStatus)
+    .then(parseJSON)
+    .then(cb);
+}
+
 function checkStatus(response) {
   if (response.status >= 200 && response.status < 300) {
     return response;
@@ -22,5 +32,5 @@ function parseJSON(response) {
   return response.json();
 }
 
-const Client = { search };
+const Client = { search, correct};
 export default Client;

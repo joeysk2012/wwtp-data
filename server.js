@@ -1,8 +1,8 @@
 const express = require('express');
 const fs = require('fs');
-//const sqlite = require('sql.js');
-//const filebuffer = fs.readFileSync('db/usda-nnd.sqlite3');
-//const db = new sqlite.Database(filebuffer);
+const sqlite = require('sql.js');
+const filebuffer = fs.readFileSync('./employees.sqlite');
+const db = new sqlite.Database(filebuffer);
 const wwtpdata= require('./data/wwtp_ca.json')
 const app = express();
 
@@ -22,21 +22,26 @@ if (process.env.NODE_ENV === 'production') {
 /*this is the GET protocol for serving up json query include ?q=*/
 app.get('/api/wwtp', function(req, res, next) {
   const param = req.query.q;
+  const r=db.exec('select eid,fname from employees')
   var serveJson= {"wwtp":[]};
 
   if(param=="all"){
+    serveJson=wwtpdata
     return res.json({
-      wwtpdata
+      serveJson
       });
 
+  if(param=="employees"){
+        res.json(r[0])
+      }
+
   } if(isNaN(param)==true){
-      serveJson=wwtpdata.wwtp.filter(function(wwtp){
+      serveJson.wwtp=wwtpdata.wwtp.filter(function(wwtp){
         return  wwtp.city.toLowerCase()==param.toLowerCase()
         })
-          return res.json({serveJson})
+        return res.json({serveJson})}
 
-
-  }  if(isNaN(param)==false){
+    if(isNaN(param)==false){
       serveJson=wwtpdata.wwtp.filter(function(wwtp){
         return  wwtp.zip.substring(0,3)==param.substring(0,3)
       })
@@ -44,14 +49,10 @@ app.get('/api/wwtp', function(req, res, next) {
     }
     if(param==null){
       res.json({"This is an error": "error"})
-    }else{
+    }
+    else{
     res.json({"this is an error" : "error"})
     }
-
-
-
-  // WARNING: Not for production use! The following statement
-  // is not protected against SQL injections.
 
 })
 

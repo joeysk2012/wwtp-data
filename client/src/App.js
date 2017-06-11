@@ -5,6 +5,7 @@ var TableHeaderColumn = ReactBsTable.TableHeaderColumn;
 import '../public/css/react-bootstrap-table.css';
 import ReactModal from 'react-modal';
 import Client from './Client'
+import Search from './Search'
 
 
 class App extends React.Component {
@@ -14,23 +15,24 @@ class App extends React.Component {
       showModal: false,
       showModal1: false,
       posts: [],
-      city: this.props.Api
+      city: 'all'
 
     }
     this.handleOpenModal = this.handleOpenModal.bind(this);
     this.handleCloseModal = this.handleCloseModal.bind(this);
     this.handleOpenModal1 = this.handleOpenModal1.bind(this);
     this.handleCloseModal1 = this.handleCloseModal1.bind(this);
+    this.handleCityChange = this.handleCityChange.bind(this);
+    this.handleCityAll=this.handleCityAll.bind(this);
   }
 
 
    componentDidMount() {
-
-     Client.search("all", (data) => {
-       this.setState({
-         posts: data.wwtpdata.wwtp
-       });
-     });
+     Client.search('all', (data) => {
+      this.setState({
+        posts: data.serveJson.wwtp
+      });
+    });
   }
 
   handleOpenModal () {
@@ -47,6 +49,23 @@ class App extends React.Component {
 
   handleCloseModal1 () {
     this.setState({ showModal1: false });
+  }
+
+  handleCityChange(city){
+   this.setState({city});
+    Client.search(city, (data) => {
+     this.setState({
+       posts: data.serveJson.wwtp
+     });
+   });
+  }
+
+  handleCityAll(city){
+    Client.search(city, (data) => {
+     this.setState({
+       posts: data.serveJson.wwtp
+     });
+   });
   }
 
 createCustomButtonGroup = props =>{
@@ -103,9 +122,10 @@ createCustomButtonGroup = props =>{
       }
     };
 
+    const city=this.state.city;
+
     return(
       <div>
-      {/*Info Modal component*/}
 
       <ReactModal
         isOpen={this.state.showModal}
@@ -134,8 +154,9 @@ createCustomButtonGroup = props =>{
         <button onClick={this.handleCloseModal1}>Close Modal</button>
       </ReactModal>
 
+      <Search onCityChange={this.handleCityChange} onCityAll={this.handleCityAll} />
       <BootstrapTable ref='table' data={this.state.posts} maxHeight='500px' exportCSV pagination={true}  options={mods} scrollTop={'Top'}
-       search={true} multicolumnSearch={true} searchPlaceholder='Search all Results' options={buttonMod} >
+      options={buttonMod} >
         <TableHeaderColumn width='200' dataField='name' isKey dataSort filter={filterMod}>{"Name"}</TableHeaderColumn>
         <TableHeaderColumn width='200' dataField='address' dataSort filter={filterMod}>{"Address"}</TableHeaderColumn>
         <TableHeaderColumn width='200' dataField='city'dataSort filter={filterMod}>{"City"}</TableHeaderColumn>
