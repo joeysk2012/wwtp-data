@@ -25,36 +25,37 @@ $(document).ready(function() {
 
 
 var count = 0;
-while (data.serveJson.wwtp[count]) {
+while (data.wwtp[count]) {
     count++;
 }
-
+console.log(count)
 for(i=0 ; i < count ; i++){
-  var lon=data.serveJson.wwtp[i].lon
-  var lat=data.serveJson.wwtp[i].lat
+  var lon=data.wwtp[i].lon
+  var lat=data.wwtp[i].lat
   var coord=[lon,lat]
-  var name=data.serveJson.wwtp[i].name
-  var address =data.serveJson.wwtp[i].address
-  var city=data.serveJson.wwtp[i].city
-  var state=data.serveJson.wwtp[i].state
-  var zip=data.serveJson.wwtp[i].zip
-  var supplier=data.serveJson.wwtp[i].supplier
-  var descript=data.serveJson.wwtp[i].descript
-  var outfall=data.serveJson.wwtp[i].outfall
-  var disposal=data.serveJson.wwtp[i].disposal
-  var sic=data.serveJson.wwtp[i].sic
-  var level=data.serveJson.wwtp[i].level
-  var total=Math.round(data.serveJson.wwtp[i].total*0.325851)
-  var discharge=Math.round(data.serveJson.wwtp[i].discharge*0.325851)
-  var recycled_in_area=Math.round(data.serveJson.wwtp[i].recycled_in_area*0.325851)
-  var recycled_out_area=Math.round(data.serveJson.wwtp[i].recycled_out_area*0.325851)
+  var name=data.wwtp[i].name
+  var address =data.wwtp[i].address
+  var city=data.wwtp[i].city
+  var state=data.wwtp[i].state
+  var zip=data.wwtp[i].zip
+  var supplier=data.wwtp[i].supplier
+  var descript=data.wwtp[i].descript
+  var outfall=data.wwtp[i].outfall
+  var disposal=data.wwtp[i].disposal
+  var sic=data.wwtp[i].sic
+  var level=data.wwtp[i].level
+  var total=Math.round(data.wwtp[i].total*0.325851)
+  var discharge=Math.round(data.wwtp[i].discharge*0.325851)
+  var recycled_in_area=Math.round(data.wwtp[i].recycled_in_area*0.325851)
+  var recycled_out_area=Math.round(data.wwtp[i].recycled_out_area*0.325851)
 
   GeoJson.source.data.features.push({"type": "Feature", "geometry": {"type": "Point", "coordinates": coord},
     "properties": {"name": name, "city": city, "supplier": supplier,
     "outfall":outfall, "descript": descript, "disposal": disposal, "level": level,
     "total" : total, "discharge": discharge, "recycled_in_area" : recycled_in_area, "recycled_out_area" : recycled_out_area}})
-  }
 
+  }
+    console.log(GeoJson)
   return GeoJson
 }
 
@@ -192,7 +193,13 @@ map.on('mouseleave', 'points', function() {
     map.getCanvas().style.cursor = '';
 });
 
+  document.getElementById('all').addEventListener('click', function () {
+    map.flyTo({
+      center: [-119.4179,36.7783],
+      zoom: 5
+      });
 
+  })
 
 /*this below is the serach function that flies to city to city*/
 

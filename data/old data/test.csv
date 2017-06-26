@@ -1,0 +1,9 @@
+name,address,city,state,zip,lat,lon,supplier,descript,outfall,disposal,treats_ww_gen_area,sic,level,total,discharge,recycled_in_area,recycled_out_area
+Cloverdale Waste Water Treatment Facility,700 Asti Rd,Cloverdale,CA,95425,38.764079,-122.983245,"Cloverdale, City of",Evaporation/percolation ponds at WWTF,Cloverdale Waste Water Treatment Facility,Percolation ponds,N,4952,"Secondary, Disinfected -23",567.74,567.74,0,0
+City of San Leandro,3000 Davis ST,San Leandro,CA,94577,37.714649,-122.192812,East Bay Municipal Utility District,none,EBDA Outfall,Bay or estuary outfall,Y,4952,"Secondary, Disinfected -23",5045.251625,4456.025158,392.8176448,0
+Cal American Water Wastewater,45 Skyway Blvd,Salinas,CA,93905,36.3671241,-121.615871,California American Water Company- Monterey District,golf courses,Ponds,Percolation Ponds,N,4952,"Secondary, Disinfected -23",60,60,0,0
+SBWRP,2411 Dairy Mart Rd,San Diego,CA,92154,32.544848,-117.068324,California American Water Company - San Diego District,ocean outfall,Pacific Ocean,ocean outfall,none,4952,"Secondary, Undisinfected",0,105,0,0
+Los Angeles-Glendale WRP,4600 Colorado Blvd,Los Angles,CA,90039,34.139500,-118.273940,Los Angeles City Department of Water and Power,Outfall to LA River,"Los Angeles River,",River or Creek Outfall,Y,4952,Tertiary,16000,11100,3200,1700
+Regional Water Quality Control Plant,2501 Embarcadero Way,Palo Alto,CA,94303,37.452114,-122.110879,Palo Alto City of,none,Bay via Emily Renzel Marsh,Wetlands,Y,4952,Tertiary,629,629,0,0
+Sunnyvale WPCP,1444,Sunnyvale,CA,94089,37.418766,-122.016097,Sunnyvale City of,Discharge via Moffett Channel and Guadalupe Slough,Moffett Channel,Bay or estuary outfall,N,4952,"Secondary, Disinfected -23",13476,11300,7981,0
+Silicon Valley Clean Water Wastewater Treatment,1400 Radio Rd,Palo Alto,CA,94065,37.548048,-122.229149,Redwood City,Deep Channel,Lower San Francisco Bay,Bay or estuary outfall,Y,4952,Tertiary,14622,13844,778,0

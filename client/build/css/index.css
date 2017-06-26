@@ -46,7 +46,8 @@ text-align: center;
 }
 
 .app-section{
-  padding-top: 100px;
+  margin-top : 50px;
+  margin-bottom: 50px;
 
 }
 
@@ -55,5 +56,11 @@ text-align: center;
   margin-top: 20px;
   margin-left: 20px;
   margin-right: 20px;
+  margin-bottom:100px;
+}
+
+.search-bar{
+margin-top : 20px;
+margin-bottom: 20px;
 
 }

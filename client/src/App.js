@@ -30,7 +30,7 @@ class App extends React.Component {
    componentDidMount() {
      Client.search('all', (data) => {
       this.setState({
-        posts: data.serveJson.wwtp
+        posts: data.wwtp
       });
     });
   }
@@ -55,7 +55,7 @@ class App extends React.Component {
    this.setState({city});
     Client.search(city, (data) => {
      this.setState({
-       posts: data.serveJson.wwtp
+       posts: data.wwtp
      });
    });
   }
@@ -63,7 +63,7 @@ class App extends React.Component {
   handleCityAll(city){
     Client.search(city, (data) => {
      this.setState({
-       posts: data.serveJson.wwtp
+       posts: data.wwtp
      });
    });
   }

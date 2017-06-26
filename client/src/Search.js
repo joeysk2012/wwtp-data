@@ -12,6 +12,8 @@ class Search extends React.Component {
       this.handleAll=this.handleAll.bind(this);
   }
 
+
+
   handleSubmit(e){
       e.preventDefault();
      var cityName=this.state.city
@@ -28,6 +30,8 @@ class Search extends React.Component {
     this.setState({city : 'all'}, function () {
       var cityName=this.state.city
       this.props.onCityAll(cityName)
+      var entry=this.inputEntry.value
+      this.inputEntry.value="";
     })
   }
 
@@ -38,10 +42,10 @@ class Search extends React.Component {
       <form onSubmit={this.handleSubmit}>
         <label>
           Search a city:
-          <input className="form-control" type="text" value={city} onChange={this.handleChange} id="bar" />
+          <input className="form-control" type="text" value={city} onChange={this.handleChange} id="bar" ref={el => this.inputEntry = el} />
          </label>
         <button className="btn btn-info" id="fly">submit</button>
-       <button className="btn btn-secondary" type="button" onClick={this.handleAll}>all</button>
+       <button className="btn btn-secondary" id="all" type="button" onClick={this.handleAll}>all</button>
       </form>
      </div>
     )
