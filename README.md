@@ -58,9 +58,9 @@ The code has been tested using Mocah/Chai for front end javascript and Jest for 
 - [Bootstrap](http://getbootstrap.com/)
 - [Chart.js](http://www.chartjs.org/)
 - [React-Bootstrap-Table](https://allenfang.github.io/react-bootstrap-table/)
--[Mocha](https://mochajs.org/)
--[Chai](http://chaijs.com/)
--[Jest](https://facebook.github.io/jest/)
+- [Mocha](https://mochajs.org/)
+- [Chai](http://chaijs.com/)
+- [Jest](https://facebook.github.io/jest/)
 
 ## <a name="todo"></a>Future To Do List
 
