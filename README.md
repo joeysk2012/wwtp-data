@@ -23,7 +23,7 @@ Hydro data maps all of the wastewater treatment plans in California. Water is a 
 This website features a map that can be searched for location of treatment plant by city. It will zoom into that location and display an icon marker. You can click on the icon marker to display information of that treatment plant including name, address, total water treated in a year,and total water recycled within and out of district. There are over 300 maker locations at this point.
 
 
-![Demo](http://imgur.com/ArwTsxN)
+![Demo](http://i.imgur.com/P4uU5Co.gif)
 
 
 
