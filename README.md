@@ -36,19 +36,19 @@ The map is made using Mapbox GL API. It combines open street maps rendered using
 ## <a name="Charts"></a>Charts
 The charts were made using Chart.js, a library used to make data visualizations. Pie chart has integration with Mapbox and will update upon clicking the marker. The pie chart displays the percentage of water discharged, water recycled back into the district and water recycled out of the water district. Data is taken from Urban Water Management Plan of 2015 reported by treatment plants.
 
-## <a name="Data Table"></a>Data Table
+## <a name="Datatable"></a>Data Table
 The data table was made using react-bootstrap-table. It can be saved into a csv and be filtered out by each of the categories and it can be sorted by each of the columns. The table provides the same data displayed on the map. It renders only the rows that needs to be shown so it is very quick despite having to display lots of data. Here are the categories on the table and what they mean:
-- Name: Name of the Water Treatment Plant
-- Address: Address of the Site
-- City: City of location
-- Zip: Zip code of location
-- State: Only shows California for now, future versions will incorporate more states.
-- Outfall: The location where the treatment plant discharges to. Either to a river, ocean, or pond.
-- Level of Treatment: The highest level of water treated. Secondary is treatment level that significantly reduces suspended solids. Tertiary treatment provides disinfecting, and removal of micro pollutants.
-- Total: Water treated in millions of gallons in the year 2015
-- Discharged: Total water discharged in millions of gallons in year 2015
-- Recycled in Area: Water recycled back into the water district as reported by the water supplier.
-- Water recycled out of the water district as reported by the water supplier.
+- **Name:** Name of the Water Treatment Plant
+- **Address:** Address of the Site
+- **City:** City of location
+- **Zip:** Zip code of location
+- **State:** Only shows California for now, future versions will incorporate more states.
+- **Outfall:** The location where the treatment plant discharges to. Either to a river, ocean, or pond.
+- **Level of Treatment:** The highest level of water treated. Secondary is treatment level that significantly reduces suspended solids. Tertiary treatment provides disinfecting, and removal of micro pollutants.
+- **Total:** Water treated in millions of gallons in the year 2015
+- **Discharged:** Total water discharged in millions of gallons in year 2015
+- **Recycled in Area:** Water recycled back into the water district as reported by the water supplier.
+- **Recycled out of Area:** Water recycled out of the water district as reported by the water supplier.
 
 
 ## <a name="Database"></a>Database
@@ -75,9 +75,9 @@ The code has been tested using Mocah/Chai for front end JavaScript and Jest for 
 
 ## <a name="todo"></a>Future To Do List
 
-[] Integration boundry data from each waterdistrict to map out he boundries of each district
-[] Write more unit tests using BDD method in order to uncover more bugs with the code.
-[] Use POST method to creat and delete database.
+- [] Integration boundry data from each waterdistrict to map out he boundries of each district
+- [] Write more unit tests using BDD method in order to uncover more bugs with the code.
+- [] Use POST method to creat and delete database.
 
 ## <a name="about"></a>About the Author
 This web app was made be Joe Kurokawa, an engineer and a developer.
