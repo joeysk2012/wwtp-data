@@ -4,6 +4,7 @@ $(document).ready(function() {
 
 /*this below fuction takes raw json and combines it into a MapBox format*/
 
+
   function CombineGeoJson(data){
     var GeoJson= {
       "id": "points",
@@ -28,7 +29,6 @@ var count = 0;
 while (data.wwtp[count]) {
     count++;
 }
-console.log(count)
 for(i=0 ; i < count ; i++){
   var lon=data.wwtp[i].lon
   var lat=data.wwtp[i].lat
@@ -44,10 +44,10 @@ for(i=0 ; i < count ; i++){
   var disposal=data.wwtp[i].disposal
   var sic=data.wwtp[i].sic
   var level=data.wwtp[i].level
-  var total=Math.round(data.wwtp[i].total*0.325851)
-  var discharge=Math.round(data.wwtp[i].discharge*0.325851)
-  var recycled_in_area=Math.round(data.wwtp[i].recycled_in_area*0.325851)
-  var recycled_out_area=Math.round(data.wwtp[i].recycled_out_area*0.325851)
+  var total=data.wwtp[i].total
+  var discharge=data.wwtp[i].discharge
+  var recycled_in_area=data.wwtp[i].recycled_in_area
+  var recycled_out_area=data.wwtp[i].recycled_out_area
 
   GeoJson.source.data.features.push({"type": "Feature", "geometry": {"type": "Point", "coordinates": coord},
     "properties": {"name": name, "city": city, "supplier": supplier,
@@ -55,7 +55,7 @@ for(i=0 ; i < count ; i++){
     "total" : total, "discharge": discharge, "recycled_in_area" : recycled_in_area, "recycled_out_area" : recycled_out_area}})
 
   }
-    console.log(GeoJson)
+
   return GeoJson
 }
 
@@ -148,7 +148,7 @@ var myBarChart = new Chart(ctb,{
     return api+mod
   }
 
-/*below here is the main methods*/
+/*below here is the main execution*/
 
 $.getJSON(CombineUrl(api,mod), function(obj){
 
@@ -169,21 +169,21 @@ map.on('load', function(){
 })
 
  map.on('click', 'points', function (e) {
-new mapboxgl.Popup()
-.setLngLat(e.features[0].geometry.coordinates)
-.setHTML("<b>"+e.features[0].properties.name+"</b>"+ "<br>" + 'Total Wastewater Volume (MGAL/Yr): ' + e.features[0].properties.total
+   new mapboxgl.Popup()
+   .setLngLat(e.features[0].geometry.coordinates)
+   .setHTML("<b>"+e.features[0].properties.name+"</b>"+ "<br>" + 'Total Wastewater Volume (MGAL/Yr): ' + e.features[0].properties.total
     + "<br>"+ 'Location: '+ e.features[0].properties.city+ "<br>" + 'Treatment Level: ' + e.features[0].properties.level +
     "<br>"+ 'Outfall: '+ e.features[0].properties.outfall)
-.addTo(map);
-var tot=e.features[0].properties.total
-var rin=e.features[0].properties.recycled_in_area
-var roa=e.features[0].properties.recycled_out_area
-var wd=e.features[0].properties.discharge
-myPieChart.data.datasets[0].data=[wd,rin,roa]
-myPieChart.update();
-myBarChart.data.datasets[0].data=[tot]
-myBarChart.update();
-});
+    .addTo(map);
+    var tot=e.features[0].properties.total
+    var rin=e.features[0].properties.recycled_in_area
+    var roa=e.features[0].properties.recycled_out_area
+    var wd=e.features[0].properties.discharge
+    myPieChart.data.datasets[0].data=[wd,rin,roa]
+    myPieChart.update();
+    myBarChart.data.datasets[0].data=[tot]
+    myBarChart.update();
+  });
 
 map.on('mouseenter', 'points', function(){
    map.getCanvas().style.cursor = 'pointer';
@@ -193,33 +193,31 @@ map.on('mouseleave', 'points', function() {
     map.getCanvas().style.cursor = '';
 });
 
-  document.getElementById('all').addEventListener('click', function () {
+document.getElementById('all').addEventListener('click', function () {
     map.flyTo({
       center: [-119.4179,36.7783],
       zoom: 5
       });
-
   })
 
 /*this below is the serach function that flies to city to city*/
 
-  document.getElementById('fly').addEventListener('click', function () {
-        var search=document.getElementById('bar').value;
-        if (search==""){
+document.getElementById('fly').addEventListener('click', function () {
+      var search=document.getElementById('bar').value;
+      if (search==""){
           search="Sacramento"
           }
 
-        var searchCoord = "http://api.openweathermap.org/data/2.5/weather?q="+search+",usa&appid=4e44e3428b01d9a6ad76981f8ab8db5a";
+      var searchCoord = "/api/cities?q="+search;
         $.getJSON(searchCoord, function(data){
-            var lon=data.coord.lon
-            var lat=data.coord.lat
+            var lon=data.primary_longitude
+            var lat=data.primary_latitude
             var city=data.name
 
         map.flyTo({
           center: [lon,lat],
           zoom: 10
           });
-
 
       })/* end of get search location JSON*/
 
