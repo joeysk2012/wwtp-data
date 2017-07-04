@@ -44,11 +44,11 @@ The data table was made using react-bootstrap-table. It can be saved into a csv 
 - **Zip:** Zip code of location
 - **State:** Only shows California for now, future versions will incorporate more states.
 - **Outfall:** The location where the treatment plant discharges to. Either to a river, ocean, or pond.
-- **Level of Treatment:** The highest level of water treated. Secondary is treatment level that significantly reduces suspended solids. Tertiary treatment provides disinfecting, and removal of micro pollutants.
-- **Total:** Water treated in millions of gallons in the year 2015
-- **Discharged:** Total water discharged in millions of gallons in year 2015
-- **Recycled in Area:** Water recycled back into the water district as reported by the water supplier.
-- **Recycled out of Area:** Water recycled out of the water district as reported by the water supplier.
+- **Level of Treatment:** The highest level of water treated. Usually either secondary or tertiary. Secondary treatment significantly reduces suspended solids. Tertiary treatment provides disinfecting, and removal of micro pollutants.
+- **Total:** Water treated in millions of gallons (MGAL) in the year 2015
+- **Discharged:** Total water discharged in MGAL in year 2015
+- **Recycled in Area:** Water recycled back into the water district as reported by the water supplier in MGAL.
+- **Recycled out of Area:** Water recycled out of the water district as reported by the water supplier in MGAL.
 
 
 ## <a name="Database"></a>Database
