@@ -160,7 +160,7 @@ mapboxgl.accessToken = 'pk.eyJ1Ijoia3Vyb2thdzEiLCJhIjoiY2l6cnQyYmd4MDBkYTJ3bWZ6Y
     center: getCurrentLocation(),
     zoom: 10
   });
-
+map.addControl(new mapboxgl.NavigationControl());
 /*this below function sets marker images*/
 
 var NewGeoJson=CombineGeoJson(obj);
