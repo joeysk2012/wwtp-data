@@ -6,6 +6,7 @@ import '../public/css/react-bootstrap-table.css';
 import ReactModal from 'react-modal';
 import Client from './Client';
 import Search from './Search';
+import Topnav from './Topnav';
 var cityData = require('./data/citydata');
 var levenshtein = require('fast-levenshtein');
 
@@ -150,6 +151,7 @@ createCustomButtonGroup = props =>{
 
     return(
       <div>
+      <Topnav />
       <ReactModal
         isOpen={this.state.showModal}
         contentLabel="onRequestClose Example"
