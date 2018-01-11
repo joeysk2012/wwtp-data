@@ -4,7 +4,7 @@ import React from 'react';
 const Topnav = () => {
   return (
     <nav className="topnav-container">
-      <div className="brand">Wastewater</div>
+      <div className="brand">Wastewater-Data</div>
       <div className="nav-elements">
       <ul>
         <li>lorem</li>

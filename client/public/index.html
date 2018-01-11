@@ -13,6 +13,7 @@
     <link href='https://api.mapbox.com/mapbox-gl-js/v0.37.0/mapbox-gl.css' rel='stylesheet' />
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous"></script>
     <link href='./css/index.css' rel='stylesheet' />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
   </head>
 
   <!--title-->
@@ -26,64 +27,76 @@
           </div>
           <div class="row-fluid">
             <div class="col-m-4">
-          <button type="button" id="feedback-btn" class="btn btn-info btn-m pull-right" data-toggle="modal" data-target="#myModal">
-            Leave Feedback
-          </button>
+            </div>
+          </div>
+        </section> -->
+        
+        <!--Begin map and charts -->
+        
+        
+        
+  <body>
+    <!-- Topnav -->
+      <nav class="topnav-container">
+        <div class="brand">Wastewater-Data</div>
+        <div class="nav-elements">
+        <ul>
+          <li>lorem</li>
+          <li>ipsum</li>
+          <li>fosho</li>
+        </ul>
         </div>
-        </div>
-      </section> -->
+      </nav>
+    <!---React App starts here-->
 
-    <!--Begin map and charts -->
-
-  
-
-<!---React App starts here-->
-
-<div class="row-fluid">
-  <div class="col-xs-12">
-      <div id="root"></div>
+    <div class="row-fluid">
+      <div class="col-xs-12">
+        <div id="root"></div>
+      </div>
+      <button type="button" id="feedback-btn" class="btn btn-info btn-m pull-right" data-toggle="modal" data-target="#myModal">
+        Leave Feedback
+      </button>
     </div>
-</div>
-
-<!---Modal-->
-<div class="modal fade" id="myModal" role="dialog" tabindex="-1">
-    <div class="modal-dialog" role="document">
+          
+    <!---Modal-->
+    <div class="modal fade" id="myModal" role="dialog" tabindex="-1">
+      <div class="modal-dialog" role="document">
         <div class="modal-content">
-            <div class="modal-header">
-                <button class="close" data-dismiss="modal" type="button"><spapun aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title">Feedback</h4>
-            </div>
-            <div class="modal-body">
-              <form action="https://formspree.io/kurokaw1@gmail.com" method="POST">
-                    <div>
-                        <p>Please provide your email address so we can contact you with any questions. We will not share your information or spam you.</p>
-                    </div>
-                    <div class="form-group">
-                        <label for="inputName">Name</label>
-                        <input type="text" id="inputName" class="form-control" name="name" placeholder="Jane Doe">
-                    </div>
-                    <div class="form-group">
-                        <label for="inputEmail">Email</label>
-                        <input type="email" id="inputEmail" class="form-control" name="email" placeholder="jane.doe@example.com">
-                    </div>
+          <div class="modal-header">
+            <button class="close" data-dismiss="modal" type="button"><spapun aria-hidden="true">&times;</span></button>
+              <h4 class="modal-title">Feedback</h4>
+      </div>
+      <div class="modal-body">
+        <form action="https://formspree.io/kurokaw1@gmail.com" method="POST">
+              <div>
+                  <p>Please provide your email address so we can contact you with any questions. We will not share your information or spam you.</p>
+              </div>
+              <div class="form-group">
+                  <label for="inputName">Name</label>
+                  <input type="text" id="inputName" class="form-control" name="name" placeholder="Jane Doe">
+              </div>
+              <div class="form-group">
+                  <label for="inputEmail">Email</label>
+                  <input type="email" id="inputEmail" class="form-control" name="email" placeholder="jane.doe@example.com">
+              </div>
 
-                    <div class="form-group"></div>
-                    <div class="form-group">
-                        <label for="textArea">Please leave any comments or questions and I will get back with you:</label>
-                        <textarea class="form-control" id="textArea" name="general comments" rows="4"></textarea>
-                    </div>
-                    <div>
-                        <!-- This hidden input field is to thrwart scrapers -->
-                        <input name="_gotcha" style="display: none" type="text">
-                    </div>
-                    <div class="modal-footer">
-                        <button class="btn btn-default" data-dismiss="modal" type="button">Close</button> <button class="btn btn-primary" type="submit" value="Send">Send</button>
-                    </div>
-                </form>
-            </div>
+              <div class="form-group"></div>
+              <div class="form-group">
+                  <label for="textArea">Please leave any comments or questions and I will get back with you:</label>
+                  <textarea class="form-control" id="textArea" name="general comments" rows="4"></textarea>
+              </div>
+              <div>
+                  <!-- This hidden input field is to thrwart scrapers -->
+                  <input name="_gotcha" style="display: none" type="text">
+              </div>
+              <div class="modal-footer">
+                  <button class="btn btn-default" data-dismiss="modal" type="button">Close</button> <button class="btn btn-primary" type="submit" value="Send">Send</button>
+              </div>
+          </form>
         </div>
+      </div>
     </div>
- </div>
+  </div>
 
 
 

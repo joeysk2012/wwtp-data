@@ -73,7 +73,16 @@ margin-bottom: 20px;
 
 nav.topnav-container {
   display: flex;
-  justify-content: space-between
+  justify-content: space-between;
+  background: #2aabd2;
+}
+
+nav.topnav-container > div {
+  padding: 15px 20px;
+}
+
+nav.topnav-container > div.brand {
+  margin-left: 50px;
 }
 
 div.nav-elements > ul {
@@ -81,6 +90,8 @@ div.nav-elements > ul {
   display: flex;
   justify-content: space-between;
   width: 300px;
-  margin-right: 128px;
+  margin-right: 154px;
 }
+
+
 

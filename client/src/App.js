@@ -152,7 +152,6 @@ createCustomButtonGroup = props =>{
 
     return(
       <div>
-      <Topnav />
       <MapSection />
       <ReactModal
         isOpen={this.state.showModal}
