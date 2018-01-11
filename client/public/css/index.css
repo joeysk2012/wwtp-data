@@ -70,3 +70,17 @@ margin-bottom: 20px;
     width: 90%; 
   }
 }
+
+nav.topnav-container {
+  display: flex;
+  justify-content: space-between
+}
+
+div.nav-elements > ul {
+  list-style-type: none;
+  display: flex;
+  justify-content: space-between;
+  width: 300px;
+  margin-right: 128px;
+}
+
