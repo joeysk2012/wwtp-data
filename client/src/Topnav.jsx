@@ -1,15 +1,15 @@
 import React from 'react';
 
-
+// NOT USED -- USING BOOTSTRAP INSTEAD
 const Topnav = () => {
   return (
     <nav className="topnav-container">
       <div className="brand">Wastewater-Data</div>
       <div className="nav-elements">
       <ul>
-        <li>lorem</li>
-        <li>ipsum</li>
-        <li>fosho</li>
+        <li>Instructions</li>
+        <li>About</li>
+        <li>Feedback</li>
       </ul>
       </div>
     </nav>
