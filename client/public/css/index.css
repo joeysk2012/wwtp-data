@@ -74,11 +74,19 @@ margin-bottom: 20px;
 nav.topnav-container {
   display: flex;
   justify-content: space-between;
-  background: #2aabd2;
+  /* background: #2aabd2; */
+  background: rgba(151,237,247,1);
+background: -moz-linear-gradient(left, rgba(151,237,247,1) 0%, rgba(144,198,240,1) 47%, rgba(42,171,210,1) 100%);
+background: -webkit-gradient(left top, right top, color-stop(0%, rgba(151,237,247,1)), color-stop(47%, rgba(144,198,240,1)), color-stop(100%, rgba(42,171,210,1)));
+background: -webkit-linear-gradient(left, rgba(151,237,247,1) 0%, rgba(144,198,240,1) 47%, rgba(42,171,210,1) 100%);
+background: -o-linear-gradient(left, rgba(151,237,247,1) 0%, rgba(144,198,240,1) 47%, rgba(42,171,210,1) 100%);
+background: -ms-linear-gradient(left, rgba(151,237,247,1) 0%, rgba(144,198,240,1) 47%, rgba(42,171,210,1) 100%);
+background: linear-gradient(to right, rgba(151,237,247,1) 0%, rgba(144,198,240,1) 47%, rgba(42,171,210,1) 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#97edf7', endColorstr='#2aabd2', GradientType=1 );
 }
 
 nav.topnav-container > div {
-  padding: 15px 20px;
+  padding: 10px 20px;
   padding-top: 25px;
 }
 
