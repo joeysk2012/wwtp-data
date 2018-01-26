@@ -9,6 +9,7 @@
     "fast-levenshtein": "^2.0.6",
     "foobar": "^1.1.0",
     "fs": "0.0.2",
+    "react-icons": "^2.2.7",
     "sql-js": "^0.1.0",
     "sql.js": "0.3.2"
   },

@@ -7,6 +7,7 @@ import ReactModal from 'react-modal';
 import Client from './Client';
 import Search from './Search';
 import Topnav from './Topnav';
+import Footer from './Footer';
 import MapSection from './MapSection';
 var cityData = require('./data/citydata');
 var levenshtein = require('fast-levenshtein');
@@ -203,8 +204,8 @@ createCustomButtonGroup = props =>{
         <TableHeaderColumn width='200' dataField='recycled_in_area'dataSort={true}>{"Recycled in area (MGAL)"}</TableHeaderColumn>
         <TableHeaderColumn width='200' dataField='recycled_out_area' dataSort={true}>{"Recycled out of area (MGAL)"}</TableHeaderColumn>
       </BootstrapTable>
+      <Footer />
     </div>
-
     );
   }
 }
